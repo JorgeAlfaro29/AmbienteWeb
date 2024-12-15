@@ -10,10 +10,15 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQFqkx_Xg2tCRiU9_V-ZRzTbRIeGTK5Wg" defer></script>
 </head>
 
 <body>
@@ -34,7 +39,7 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Noticias.html">Noticias</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                            href="reciclyng_materials.html">Materiables Reciclables</a></li>
+                            href="reciclyng_materials.html">Materiales Reciclables</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                             href="voluntariado.html">Voluntariado</a></li>
                 </ul>
@@ -60,24 +65,26 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                <!-- Collection Center Locations -->
-                <div class="post-preview">
-                    <h2>San José</h2>
-                    <p>Dirección: Calle Central, San José Centro</p>
-                </div>
-                <hr class="my-4">
+                <h2 class="text-center mb-5">Ubicaciones de Centros</h2>
 
-                <div class="post-preview">
-                    <h2>Alajuela</h2>
-                    <p>Dirección: Avenida 6, Alajuela Centro</p>
+                <!-- San José -->
+                <div class="mb-4">
+                    <h3>San José</h3>
+                    <p>Dirección: Calle Central, San José Centro, frente al Parque Central</p>
+                    <div id="map-sanjose" style="height: 300px; width: 100%;"></div>
                 </div>
-                <hr class="my-4">
-
-                <div class="post-preview">
-                    <h2>Heredia</h2>
-                    <p>Dirección: Boulevard 8, Heredia Centro</p>
+                <!-- Alajuela -->
+                <div class="mb-4">
+                    <h3>Alajuela</h3>
+                    <p>Dirección: Avenida 6, Alajuela Centro, contiguo a la Catedral</p>
+                    <div id="map-alajuela" style="height: 300px; width: 100%;"></div>
                 </div>
-                <hr class="my-4">
+                <!-- Heredia -->
+                <div class="mb-4">
+                    <h3>Heredia</h3>
+                    <p>Dirección: Boulevard 8, Heredia Centro, frente al Palacio Municipal</p>
+                    <div id="map-heredia" style="height: 300px; width: 100%;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -120,3 +127,9 @@
         </div>
     </footer>
 </body>
+
+<!-- Google Maps Scripts -->
+<script src="js/googlemaps.js"></script>
+</body>
+
+</html>
