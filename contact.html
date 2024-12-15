@@ -63,27 +63,30 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="backend/contacto.php" method="post">
                                 <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Nombre</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">*Campo Obligatorio</div>
+                                    <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Enter your name..." required />
+                                    <label for="nombre">Nombre</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
+                                    <input class="form-control" id="primerApellido" name="primerApellido" type="text" placeholder="Enter your first surname..." required />
+                                    <label for="primerApellido">Primer Apellido</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="segundoApellido" name="segundoApellido" type="text" placeholder="Enter your second surname..." required />
+                                    <label for="segundoApellido">Segundo Apellido</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="Enter your email..." required />
                                     <label for="email">Email</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">*Campo Obligatorio</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">*Email Invalido</div>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" />
-                                    <label for="phone">Número de Telefono</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">*Campo Obligatorio</div>
+                                    <input class="form-control" id="numeroTelefono" name="numeroTelefono" type="text" placeholder="Enter your phone number..." required />
+                                    <label for="numeroTelefono">Número de Teléfono</label>
                                 </div>
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Mensaje</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">*Campo Obligatorio</div>
+                                    <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Enter your message here..." style="height: 12rem" required></textarea>
+                                    <label for="mensaje">Mensaje</label>
                                 </div>
                                 <br />
                                 <!-- Submit success message-->
@@ -104,7 +107,7 @@
                                 <!-- an error submitting the form-->
                                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error al enviar la informacion</div></div>
                                 <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Enviar</button>
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Enviar</button>
                             </form>
                         </div>
                     </div>
