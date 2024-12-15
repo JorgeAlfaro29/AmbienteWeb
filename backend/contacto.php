@@ -46,29 +46,6 @@
     $userDao = new UserDAOSpImpl();
     
     
-        error_reporting(E_ALL);
-        ini_set('display_errors', 1);
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            echo "<pre>";
-            print_r($_POST); // Esto mostrará todos los datos enviados
-            echo "</pre>";
-
-            $nombre = $_POST['nombre'];
-            $primerApellido = $_POST['primerApellido'];
-            $segundoApellido = $_POST['segundoApellido'];
-            $email = $_POST['email'] ?? '';
-            $numeroTelefono = $_POST['numeroTelefono'];
-            $mensaje = $_POST['mensaje'];
-
-            echo "Procesando datos: ";
-            echo $nombre . ", " . $primerApellido . ", " . $segundoApellido . ", " . $email . ", " . $numeroTelefono . ", " . $mensaje;
-        } else {
-            echo "Formulario no enviado correctamente.";
-        }
-
-
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nombre = $_POST['nombre'] ?? '';
         $primerApellido = $_POST['primerApellido'] ?? '';
@@ -77,6 +54,8 @@
         $numeroTelefono = $_POST['numeroTelefono'] ?? '';
         $mensaje = $_POST['mensaje'] ?? '';
         $userDao->InsertarContacto($nombre, $primerApellido, $segundoApellido, $email, $numeroTelefono, $mensaje);
+        header("AmbienteWeb\index.html");
+    exit();
     } else {
         echo "Error";
     }
