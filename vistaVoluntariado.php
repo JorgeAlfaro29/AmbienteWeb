@@ -85,7 +85,6 @@ if (!$resultado) {
                                 <th>Apellido</th>
                                 <th>Correo</th>
                                 <th>Teléfono</th>
-                                <th>Área</th>
                                 <th>Mensaje</th>
                             </tr>
                         </thead>
@@ -97,7 +96,6 @@ if (!$resultado) {
                                     <td><?php echo htmlspecialchars($row['apellido']); ?></td>
                                     <td><?php echo htmlspecialchars($row['correo']); ?></td>
                                     <td><?php echo htmlspecialchars($row['telefono']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['area']); ?></td>
                                     <td><?php echo htmlspecialchars($row['mensaje']); ?></td>
                                 </tr>
                             <?php endwhile; ?>
