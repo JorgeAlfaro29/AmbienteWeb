@@ -45,7 +45,7 @@ $resultado = $conexion->query($query);
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/collection_centers.html">Centros de Recolección</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/contact.html">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/reciclyng_materials.html">Materiales Reciclables</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/voluntariado.html">Voluntariado</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/voluntariado.php">Voluntariado</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/vistaContacto.php">Contacto Vista</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/vistaVoluntariado.php">Voluntariado Vista</a></li>
 

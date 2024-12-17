@@ -37,7 +37,10 @@ $resultado = $conexion->query($query);
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/about.html">Quiénes Somos</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/contact_list.php">Contactos</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/contact.html">Contactos</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/noticias.php">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/vistaVoluntariado.php">Vista Voluntariado</a></li>
+
                     <?php if ($usuario): ?>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Bienvenido, <?php echo htmlspecialchars($usuario); ?></a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/backend/logout.php">Cerrar Sesión</a></li>
