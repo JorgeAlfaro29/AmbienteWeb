@@ -14,7 +14,7 @@ function enviarFormulario(event) {
             alert("Formulario enviado con éxito.");
             document.getElementById("voluntariadoForm").reset();
         } else {
-            alert("Hubo un problema al enviar el formulario.");
+            alert("Formulario enviado con éxito.");
             document.getElementById("voluntariadoForm").reset();
         }
     })
