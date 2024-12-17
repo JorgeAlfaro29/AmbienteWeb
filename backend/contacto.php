@@ -55,7 +55,7 @@
         $mensaje = $_POST['mensaje'] ?? '';
         $userDao->InsertarContacto($nombre, $primerApellido, $segundoApellido, $email, $numeroTelefono, $mensaje);
         header("AmbienteWeb\index.html");
-    exit();
+        exit();
     } else {
         echo "Error";
     }
