@@ -1,14 +1,8 @@
 <?php
-include('db_connection.php');
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $idCentro = $_POST['idCentro'];
-
-    $query = "DELETE FROM centrosRecoleccion WHERE idCentro=$idCentro";
-    if (mysqli_query($conn, $query)) {
-        echo "Centro de recolección eliminado con éxito";
-    } else {
-        echo "Error al eliminar el centro de recolección";
-    }
+$conexion = new mysqli("localhost", "root", "", "proyecto");
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $conexion->query("DELETE FROM CentrosRecoleccion WHERE idCentro=$id");
 }
+header("Location: ../centros_recoleccion.php");
 ?>

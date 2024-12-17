@@ -42,7 +42,7 @@ $resultado = $conexion->query($query);
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/noticias.php">Noticias</a></li>
                 <?php endif; ?>
 
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/collection_centers.html">Centros de Recolección</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/centros_recoleccion.php">Centros de Recolección</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/contact.html">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/reciclyng_materials.html">Materiales Reciclables</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/AmbienteWeb/voluntariado.html">Voluntariado</a></li>

@@ -1,15 +1,9 @@
 <?php
-include('db_connection.php');
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $direccion = $_POST['direccion'];
+$conexion = new mysqli("localhost", "root", "", "proyecto");
+if ($_POST) {
     $provincia = $_POST['provincia'];
-
-    $query = "CALL InsertarCentroRecoleccion('$direccion', '$provincia')";
-    if (mysqli_query($conn, $query)) {
-        echo "Centro de recolección agregado con éxito";
-    } else {
-        echo "Error al agregar el centro de recolección";
-    }
+    $direccion = $_POST['direccion'];
+    $conexion->query("INSERT INTO CentrosRecoleccion (Provincia, Direccion) VALUES ('$provincia', '$direccion')");
 }
+header("Location: ../centros_recoleccion.php");
 ?>
