@@ -1,63 +1,47 @@
 <?php
-// Habilitar la visualización de errores en desarrollo
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// Establecer la conexión con la base de datos
+// Conexion a la base de datos
 $servername = "localhost";
-$username = "jorge";
-$password = "1234";
+$username = "root";
+$password = "";
 $dbname = "baseVoluntariado";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Comprobar la conexión
+// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Verificar si el formulario fue enviado por el método POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recibir datos del formulario
-    $nombre = $_POST['nombre'] ?? '';
-    $apellido = $_POST['apellido'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $telefono = $_POST['telefono'] ?? '';
-    $areas = isset($_POST['areas']) ? implode(",", $_POST['areas']) : '';  // Áreas seleccionadas
-    $mensaje = $_POST['mensaje'] ?? '';
+// Recibir datos del formulario
+$nombre = $_POST['name'];
+$apellido = $_POST['apellido'];
+$correo = $_POST['email'];
+$telefono = $_POST['phone'];
+$areas = $_POST['areas']; // Este campo es un arreglo
+$mensaje = $_POST['message'];
 
-    // Verificar si los campos requeridos están vacíos
-    if (empty($nombre) || empty($apellido) || empty($email) || empty($telefono)) {
-        echo "Por favor, complete todos los campos obligatorios.";
-    } else {
-        // Insertar en la tabla voluntariado (solicitud de voluntariado)
-        $sql_voluntariado = "INSERT INTO voluntariado (nombre, apellido, correo, telefono, areas, mensaje) 
-                            VALUES ('$nombre', '$apellido', '$email', '$telefono', '$areas', '$mensaje')";
+// Insertar en la tabla `voluntariado`
+$sql = "INSERT INTO voluntariado (nombre, apellido, correo, telefono, mensaje)
+        VALUES ('$nombre', '$apellido', '$correo', '$telefono', '$mensaje')";
 
-        if ($conn->query($sql_voluntariado) === TRUE) {
-            $last_id = $conn->insert_id; // Obtener el último ID insertado (idSolicitud)
+if ($conn->query($sql) === TRUE) {
+    // Obtener el id de la solicitud insertada
+    $idSolicitud = $conn->insert_id;
 
-            // Insertar en la tabla voluntario
-            $sql_voluntario = "INSERT INTO voluntario (idSolicitud, idArea, apellido, correo, telefono, mensaje) 
-                                VALUES ($last_id, NULL, '$apellido', '$email', '$telefono', '$mensaje')";
-
-            if ($conn->query($sql_voluntario) === TRUE) {
-                // Si todo se ha insertado correctamente
-                echo "¡Gracias por registrarte como voluntario! Nos pondremos en contacto contigo.";
-            } else {
-                // Mostrar error si falla la inserción en la tabla voluntario
-                echo "Error al insertar en la tabla voluntario: " . $conn->error;
-            }
-
-        } else {
-            // Mostrar error si falla la inserción en la tabla voluntariado
-            echo "Error al insertar en la tabla voluntariado: " . $conn->error;
+    // Si hay áreas seleccionadas, insertarlas en la tabla `voluntario`
+    if (!empty($areas)) {
+        foreach ($areas as $area) {
+            // Insertar cada área en la tabla `voluntario`
+            $sql_voluntario = "INSERT INTO voluntario (idSolicitud, idArea)
+                               VALUES ('$idSolicitud', '$area')";
+            $conn->query($sql_voluntario);
         }
     }
+
+    echo "¡Gracias por tu interés! Hemos recibido tu solicitud.";
 } else {
-    echo "Por favor, envíe el formulario correctamente.";
+    echo "Error al enviar tu solicitud: " . $conn->error;
 }
 
-// Cerrar la conexión
 $conn->close();
 ?>

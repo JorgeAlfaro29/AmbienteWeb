@@ -90,6 +90,22 @@
     scroll-behavior: smooth;
   }
 }
+/* Ocultar el navbar básico cuando se inicie sesión */
+body.logged-in .basic-navbar {
+  display: none;
+}
+/* Asegurar que los íconos se vean bien dentro de los botones */
+.btn i {
+  font-size: 1rem; /* Ajusta el tamaño del ícono */
+  vertical-align: middle; /* Asegura que el ícono esté centrado */
+}
+
+/* Botones más compactos */
+.btn-sm {
+  padding: 0.25rem 0.5rem; /* Reduce el tamaño del botón */
+}
+
+
 
 body {
   margin: 0;
@@ -4681,6 +4697,58 @@ textarea.form-control-lg {
   margin-top: calc(-1 * var(--bs-list-group-border-width));
   border-top-width: var(--bs-list-group-border-width);
 }
+
+/* Estilo de los campos editables para que parezcan texto normal */
+.editable-title, .editable-body, .editable-date {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 0;
+  resize: none;
+  box-shadow: none;
+}
+
+.editable-title:focus, .editable-body:focus, .editable-date:focus {
+  border: 1px solid #ced4da;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+/* Deshabilitar el resize en textarea para mantener consistencia */
+.editable-body {
+  resize: none;
+}
+
+/* Botones de guardar solo visibles cuando se edita */
+.save-btn.d-none {
+  display: none;
+}
+
+/* Cambiar cursor a texto para los campos readonly */
+.editable-title[readonly], .editable-body[readonly], .editable-date[readonly] {
+  cursor: text;
+}
+
+/* Estilo de los campos en modo edición */
+.editable-title:focus, .editable-body:focus, .editable-date:focus {
+  border: 2px solid #8A9597; 
+  background: #f9f9f9; /* Fondo ligeramente gris */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Resplandor */
+}
+
+/* Estilo cuando se remueve readonly pero no está enfocado */
+.editable-title:not([readonly]), 
+.editable-body:not([readonly]), 
+.editable-date:not([readonly]) {
+  border: 2px solid #8A9597;
+  background: #f9f9f9; /* Fondo claro */
+}
+
 
 .list-group-horizontal {
   flex-direction: row;
@@ -10796,3 +10864,4 @@ header.masthead .post-heading .meta a {
     font-size: 2.25rem;
   }
 }
+
