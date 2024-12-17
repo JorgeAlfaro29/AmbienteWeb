@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $query = "UPDATE Noticias SET Titulo='$titulo', cuerpoNoticia='$cuerpo', Fecha='$fecha' WHERE idNoticia=$id";
     if ($conexion->query($query)) {
-        header("Location: /Proyecto_AmbienteWeb/AmbienteWeb/noticias.php");
+        header("Location: /AmbienteWeb/noticias.php");
     } else {
         echo "Error: " . $conexion->error;
     }
