@@ -80,34 +80,36 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <p>Rellena el siguiente formulario para contactarnos:</p>
-                    <form id="contactForm">
+                    <form id="contactForm" action="voluntario.php" method="POST">
                         <div class="form-floating">
-                            <input class="form-control" id="name" type="text" placeholder="Tu nombre" required />
+                            <input class="form-control" id="name" name="nombre" type="text" placeholder="Tu nombre" required />
                             <label for="name">Nombre</label>
                         </div>
                         <div class="form-floating">
-                            <input class="form-control" id="email" type="email" placeholder="Tu correo" required />
+                            <input class="form-control" id="email" name="email" type="email" placeholder="Tu correo" required />
                             <label for="email">Correo</label>
                         </div>
                         <div class="form-floating">
-                            <input class="form-control" id="phone" type="tel" placeholder="Tu número de teléfono" />
+                            <input class="form-control" id="phone" name="telefono" type="tel" placeholder="Tu número de teléfono" />
                             <label for="phone">Teléfono</label>
                         </div>
                         <div class="form-floating">
-                            <select class="form-control" id="tasks">
+                            <!-- Cambiado a un select estándar sin 'multiple' para permitir solo una opción -->
+                            <select class="form-control" id="areas" name="areas" required>
                                 <option value="Clasificación de materiales">Clasificación de materiales</option>
                                 <option value="Eventos educativos">Eventos educativos</option>
                                 <option value="Apoyo logístico">Apoyo logístico</option>
                             </select>
-                            <label for="tasks">Áreas de interés</label>
+                            <label for="areas">Áreas de interés</label>
                         </div>
                         <div class="form-floating">
-                            <textarea class="form-control" id="message" placeholder="Mensaje" style="height: 12rem" required></textarea>
+                            <textarea class="form-control" id="message" name="mensaje" placeholder="Mensaje" style="height: 12rem" required></textarea>
                             <label for="message">Mensaje</label>
                         </div>
                         <br />
                         <button class="btn btn-primary text-uppercase" type="submit">Enviar</button>
-                    </form>
+                    </form>                    
+                    
                 </div>
             </div>
         </div>
